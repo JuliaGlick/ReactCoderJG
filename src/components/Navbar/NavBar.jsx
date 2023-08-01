@@ -1,17 +1,21 @@
+import "./NavBar.css";
+import Button from "../Button/Button";
 import CartWidget from "../CartWidget/CartWidget"
+import ramenLogo from "./assets/ramenLogo.svg"
 
-const NavBar = () => {
+function NavBar() {
     return (
-        <nav>
+        <nav className='navbar'>
+            <img src={ramenLogo} alt="logo" style={{ width: 60 }} />
             <h3>Chihiro Ramen</h3>
             <div>
-                <button>Ramen</button>
-                <button>Utensillos de Cocina</button>
-                <button>Sopas Instantaneas</button>
+                <Button texto="Ramen"/>
+                <Button texto="Utensillos de Cocina"/>
+                <Button texto="Sopas Instantaneas"/>
             </div>
-            <CartWidget/>
+            <CartWidget />
         </nav>
-    )
+    );
 }
 
 export default NavBar;

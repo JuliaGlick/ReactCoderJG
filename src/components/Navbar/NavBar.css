@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar button {
+    margin: 20px;
+}
+
+.navbar img {
+margin: 20px;
+}
+
+
+
