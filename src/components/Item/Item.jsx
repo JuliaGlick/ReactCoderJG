@@ -3,20 +3,20 @@ import { getProducts } from "../asyncMock";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
-       /* <article>
-            <header>
-                <h2>
+       /* <article className="cardItem">
+            <header className="header">
+                <h2 className="itemHeader">
                     {name}
                 </h2>
             </header>
             <picture>
-                <img src={image} alt={name}/>
+                <img src={image} alt={name} className="itemImg"/>
             </picture>
             <section>
-                <p>
+                <p className="info">
                     Precio: ${price}
                 </p>
-                <p>
+                <p className="info">
                     Stock Disponible: {stock}
                 </p>
             </section>

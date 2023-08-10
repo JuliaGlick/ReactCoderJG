@@ -4,17 +4,19 @@ import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList"
 
 const ItemListContainer = ({greeting}) => {
-    const [products, setProducts] = useState([])
+    const [products, setProduct] = useState([])
 
     useEffect(() => {
         getProducts()
         .then(response => {
-            setProducts(response)
+            setProduct(response)
         })
         .catch(error => {
             console.log(error)
+        }).finally(() => {
+            console.log("Promesa Finalizada")
         })
-    })
+    }, [])
     return (
         <div className="main">
             <h1>{greeting}</h1>
