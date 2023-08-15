@@ -3,7 +3,7 @@ import { getProducts } from "../asyncMock";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
-       /* <article className="cardItem">
+       <article className="cardItem">
             <header className="header">
                 <h2 className="itemHeader">
                     {name}
@@ -21,20 +21,20 @@ const Item = ({id, name, image, price, stock}) => {
                 </p>
             </section>
             <footer>
-                <button>Ver Detalle</button>
+                <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
             </footer>
-        </article> */
+        </article> 
 
-<div className="cards-list">
+/* <div className="cards-list">
   <div className="card 1">
     <div className="card_image"> <img src={image} /> </div>
     <div className="card_title title-black">
       <p>{name}</p>
     </div> 
   </div>
-  </div>
+  </div>*/
 
     )
 }
 
-export default Item
+export default Item;

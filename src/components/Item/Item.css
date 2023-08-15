@@ -1,4 +1,4 @@
-.cards-list {
+/*.cards-list {
     z-index: 0;
     width: 100%;
     display: flex;
@@ -52,13 +52,13 @@
   
   @media all and (max-width: 500px) {
     .card-list {
-      /* On small screens, we are no longer using row direction but column */
+     
       flex-direction: column;
     }
   }
   
   
-  /*
+  
   .card {
     margin: 30px auto;
     width: 300px;
@@ -73,3 +73,5 @@
     transition: 0.4s;
   }
   */
+
+  

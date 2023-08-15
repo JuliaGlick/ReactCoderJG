@@ -2,21 +2,26 @@ import "./ItemListContainer.css"
 import { getProducts } from "../asyncMock";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) => {
-    const [products, setProduct] = useState([])
+    const [products, setProducts] = useState([])
+
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        getProducts()
+        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+
+        asyncFunc(categoryId)
         .then(response => {
-            setProduct(response)
+            setProducts(response)
         })
         .catch(error => {
             console.log(error)
         }).finally(() => {
             console.log("Promesa Finalizada")
         })
-    }, [])
+    }, [categoryId])
     return (
         <div className="main">
             <h1>{greeting}</h1>

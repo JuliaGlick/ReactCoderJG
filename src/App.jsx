@@ -1,16 +1,24 @@
 import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   
   return (
     <>
-      <NavBar/>
-      <ItemListContainer greeting={"Bienvenidos al Mejor Sitio de Venta de Ramen"}/>
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path="/" element={<ItemListContainer greeting={"Bienvenidos al Mejor Sitio de Venta de Ramen"}/>} />
+      <Route path="/category/:categoryId" element={<ItemListContainer/>} />
+      <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+    </Routes>
+    </BrowserRouter>
+      
+      
       <ItemDetailContainer/>
     </>
   )
