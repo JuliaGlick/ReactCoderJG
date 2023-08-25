@@ -32,15 +32,33 @@ const products = [
 export const getProducts = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(products)
+            resolve(products);
         }, 2000)
     })
 }
 
 export const getProductById = (productId) => {
-    return new Promise ((resolve) => {
+    return new Promise ((resolve, reject) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
+            const newProd = products.find(prod => prod.id === productId);
+            if (newProd){
+                resolve(newProd);
+            } else {
+                reject("Ese producto no existe");
+            }
+        }, 2000)
+    })
+}
+
+export const getProductsByCategory = (category) => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            const newCategory = products.find(cat => cat.category === category);
+            if (newCategory){
+                resolve(newCategory);
+            } else {
+                reject("Esa categoria no existe");
+            }
         }, 2000)
     })
 }

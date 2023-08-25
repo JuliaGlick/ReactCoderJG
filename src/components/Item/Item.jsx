@@ -1,9 +1,11 @@
 import "./Item.css"
 import { getProducts } from "../asyncMock";
+import { Card } from "react-bootstrap";
+import CardHeader from "react-bootstrap/esm/CardHeader";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
-       <article className="cardItem">
+      /* <article className="cardItem">
             <header className="header">
                 <h2 className="itemHeader">
                     {name}
@@ -23,7 +25,15 @@ const Item = ({id, name, image, price, stock}) => {
             <footer>
                 <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
             </footer>
-        </article> 
+        </article> */
+
+        <Card>
+            <CardHeader></CardHeader>
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+            </Card.Body>
+            <Card.Footer>Precio: $ {precio}</Card.Footer>
+        </Card>
 
 /* <div className="cards-list">
   <div className="card 1">

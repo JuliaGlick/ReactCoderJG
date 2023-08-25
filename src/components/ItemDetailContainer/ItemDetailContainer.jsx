@@ -15,9 +15,7 @@ const ItemDetailContainer = () => {
         })
         .catch(error => {
             console.error(error)
-        }).finally(() => {
-            console.log("Promesa Finalizada")
-        })
+        }).finally(() => setIsLoading(false))
         setIsLoading(false);
     }, [itemId])
     return (
