@@ -9,7 +9,6 @@ function App() {
   
   return (
     <>
-      <NavBar/>
       <ItemListContainer greeting={"Bienvenidos al Mejor Sitio de Venta de Ramen"}/>
     </>
   )

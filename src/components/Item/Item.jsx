@@ -2,6 +2,7 @@ import "./Item.css"
 import { getProducts } from "../asyncMock";
 import { Card } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
+import { Link } from "react-router-dom";
 
 const Item = ({id, name, image, price, stock}) => {
     return (

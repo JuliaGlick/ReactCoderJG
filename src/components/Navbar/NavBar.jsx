@@ -1,24 +1,30 @@
 import "./NavBar.css";
-import Button from "../Button/Button";
 import CartWidget from "../CartWidget/CartWidget"
 import ramenLogo from "./assets/ramenLogo.svg"
 import {NavLink, Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function NavBar() {
     return (
-        <nav className='navbar'>
+        
+        <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
             <img src={ramenLogo} alt="logo" style={{ width: 60 }} />
             <Link to="/" >
-            <h3>Chihiro Ramen</h3>
+            <Navbar.Brand>Chihiro Ramen</Navbar.Brand>
             </Link>
             
-            <div>
-                <NavLink to={`/category/ramen`} className={({isActive}) => isActive ? "ActiveOption" : "Option"} texto="Ramen"/>
-                <NavLink to={`/category/utensillos`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}texto="Utensillos de Cocina"/>
-                <NavLink to={`/category/sopas`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}texto="Sopas Instantaneas"/>
-            </div>
+            <Nav>
+                <NavLink to={`/category/ramen`} className={({isActive}) => isActive ? "ActiveOption" : "Option"} ><Button variant="success">Ramen</Button></NavLink>
+                <NavLink to={`/category/utensillos`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}><Button variant="success">Utensillos de Cocina</Button></NavLink>
+                <NavLink to={`/category/sopas`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}><Button variant="success">Sopas Instantaneas</Button></NavLink>
+            </Nav>
             <CartWidget />
-        </nav>
+         </Container>
+      </Navbar>
     );
 }
 
