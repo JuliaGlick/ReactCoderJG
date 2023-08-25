@@ -5,11 +5,12 @@ import './index.css'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CartContext } from './context/cartContext';
+import CartProvider from './context/cartContext';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <CartContext>
+     <CartProvider>
      <BrowserRouter>
     <Routes>
       <Route path="/" element={<App/>} />
@@ -19,6 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
     </BrowserRouter>
      <App />
-    </CartContext>
+    </CartProvider>
   </React.StrictMode>,
 )
