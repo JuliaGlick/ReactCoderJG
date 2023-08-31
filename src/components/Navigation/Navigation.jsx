@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function NavBar() {
+function Navigation() {
     return (
         
         <Navbar bg="dark" data-bs-theme="dark">
@@ -28,4 +28,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default Navigation;

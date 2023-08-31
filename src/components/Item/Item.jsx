@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
-      <article className="cardItem">
+      /* <article className="cardItem">
             <header className="header">
                 <h2 className="itemHeader">
                     {name}
@@ -26,24 +26,26 @@ const Item = ({id, name, image, price, stock}) => {
             <footer>
                 <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
             </footer>
-        </article> 
+        </article> */
 
-        /* <Card>
-            <CardHeader></CardHeader>
+        <Card style={{width: "18rem"}} >
+            <CardHeader>
+                <Card.Img variant="top" src={image} />
+            </CardHeader>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
+                <Card.Text>
+                    Precio: ${price}
+                </Card.Text>
+                <Card.Text>
+                    Stock Disponible: ${stock}
+                </Card.Text>
+                <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
             </Card.Body>
-            <Card.Footer>Precio: $ {precio}</Card.Footer>
-        </Card>*/
+            <Card.Footer></Card.Footer>
+        </Card>
 
-/* <div className="cards-list">
-  <div className="card 1">
-    <div className="card_image"> <img src={image} /> </div>
-    <div className="card_title title-black">
-      <p>{name}</p>
-    </div> 
-  </div>
-  </div>*/
+
 
     )
 }
