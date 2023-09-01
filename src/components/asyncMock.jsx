@@ -50,10 +50,10 @@ export const getProductById = (productId) => {
     })
 }
 
-/*export const getProductsByCategory = (category) => {
+export const getProductsByCategory = (categoryId) => {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
-            const newCategory = products.find(cat => cat.category === category);
+            const newCategory = products.find(cat => cat.category === categoryId);
             if (newCategory){
                 resolve(newCategory);
             } else {
@@ -61,5 +61,5 @@ export const getProductById = (productId) => {
             }
         }, 2000)
     })
-}*/
+}
 

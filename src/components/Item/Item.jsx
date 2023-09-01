@@ -3,6 +3,7 @@ import { getProducts } from "../asyncMock";
 import { Card } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import { Link } from "react-router-dom";
+import { Button } from "bootstrap";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
@@ -40,7 +41,7 @@ const Item = ({id, name, image, price, stock}) => {
                 <Card.Text>
                     Stock Disponible: ${stock}
                 </Card.Text>
-                <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
+                <Link to={`/item/${id}`} className="btn btn-primary">Ver Detalle</Link>
             </Card.Body>
             <Card.Footer></Card.Footer>
         </Card>

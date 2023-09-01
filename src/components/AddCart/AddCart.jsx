@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import Button from "../Button/Button";
+import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/cartContext";
 
 function AddCart() {
@@ -17,7 +17,7 @@ function AddCart() {
 
     return (
         <div>
-            <Button onClick={handleClick}>
+            <Button variant="primary" onClick={handleClick}>
                 {addToCart ? "Eliminar del carrito" : "Agregar al carrito"}
             </Button>
         </div>
