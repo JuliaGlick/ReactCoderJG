@@ -8,6 +8,7 @@ import Navigation from './components/Navigation/Navigation.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartProvider from './context/cartContext';
 import "bootstrap/dist/css/bootstrap.min.css"
+import Cart from './components/Cart/Cart.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path="/" element={<App/>} />
       <Route path="/category/:categoryId" element={<ItemListContainer/>} />
       <Route path="/item/:id" element={<ItemDetailContainer/>} />
+      <Route path="/cart" element={<Cart/>} />
       <Route path="*" element={<h1>404 NOT FOUND</h1>} />
     </Routes>
     </BrowserRouter>

@@ -1,4 +1,4 @@
-import AddCart from "../AddCart/AddCart";
+
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/cartContext";
@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({ id, name, image, price, stock }) => {
-    const cartContext = useContext(CartContext);
-
     const [quantityAdded, setQuantityAdded] = useState(0)
+    const {addItem} = useContext(CartContext);
 
-    const handleOnAdd = (quantity) => {
+    const onAdd = (quantity) => {
         console.log(`Se agregaron ${quantity} productos`)
         setQuantityAdded(quantity)
+        addItem(name, quantity)
     }
 
     return (
@@ -36,7 +36,7 @@ const ItemDetail = ({ id, name, image, price, stock }) => {
                 {
                     quantityAdded > 0 ? (
                         <Link to="/cart" className="btn btn-primary">Terminar Compra</Link>
-                    ) : (<ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />)
+                    ) : (<ItemCount initial={1} stock={stock} onAdd={onAdd} />)
                     
                 }
             </Card.Footer>

@@ -4,12 +4,12 @@ import { CartContext } from "../../context/cartContext";
 import { Badge } from "react-bootstrap";
 
 const CartWidget = () => {
-    const cartContext = useContext(CartContext)
+    const {cartQuantity} = useContext(CartContext)
     
     return ( 
             <div>
                 <img src={cart} alt="cart-widget" style={{width: 45}}/>
-                <Badge>{cartContext.cartQuantity}</Badge> 
+                {cartQuantity() > 0 && <Badge>{cartQuantity()}</Badge> } 
             </div>
     )
 }

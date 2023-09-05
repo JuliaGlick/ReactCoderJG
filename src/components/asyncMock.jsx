@@ -2,7 +2,7 @@ const products = [
     {
         id:"1",
         name:"Nis Sin Ramen",
-        category:"Ramen",
+        category:"ramen",
         image:"https://cdn.webshopapp.com/shops/225503/files/307494785/image.jpg",
         stock: 15,
         price: 2000,
@@ -11,7 +11,7 @@ const products = [
     {
         id:"2",
         name:"Spicy Shin Cup",
-        category:"Ramen",
+        category:"sopas",
         image:"https://images.heb.com/is/image/HEBGrocery/000393287-1",
         stock: 15,
         price: 2000,
@@ -20,7 +20,7 @@ const products = [
     {
         id:"3",
         name:"Soon Veggie Noodle Soup",
-        category:"Ramen",
+        category:"utensillos",
         image:"https://m.media-amazon.com/images/I/71WnDinZkaL.jpg",
         stock: 15,
         price: 2000,
@@ -53,7 +53,7 @@ export const getProductById = (productId) => {
 export const getProductsByCategory = (categoryId) => {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
-            const newCategory = products.find(cat => cat.category === categoryId);
+            const newCategory = products.filter(cat => cat.category === categoryId);
             if (newCategory){
                 resolve(newCategory);
             } else {

@@ -3,25 +3,55 @@ import { createContext, useState } from "react";
 export const CartContext  = createContext([]);
 
 function CartProvider ({children}) {
-    const [cartQuantity, setCartQuantity] = useState(0)
+    const [cart, setCart] = useState([])
 
-    const incrementCartQuantity = () => {
-        setCartQuantity(cartQuantity + 1);
-    };
+    const addItem = (item, quantity) => {
+        if (isInCart(item.id)){
+            setCart(cart.map((product) => {
+                if(product.id === item.id){
+                    return{...product, quantity: product.quantity + quantity}
+                } else {
+                    return product;
+                }
+            }))
+        } else{
+            setCart([...cart,{...item, quantity}]) 
+        }
 
-     const decrementCartQuantity = () => {
-        setCartQuantity(cartQuantity - 1);
-    };
+    }
+
+    const cartQuantity = () => {
+        return cart.reduce((acc, item) => acc + item.quantity, 0)
+    }
+
+    const total = () => {
+        return cart.reduce((acc, item) => acc + item.quantity * item.price, 0)
+    }
 
     const clear = () => {
-        setCartQuantity([])
+        setCart([])
+
     }
+
+    const isInCart = (id) => {
+        return cart.some((item) => item.id === id)
+
+    }
+
+    const deleteItem = (id) =>{
+        setCart(cart.filter((item) => item.id !== id))
+    }
+    
 
     return (
     <CartContext.Provider value={{
-        cartQuantity: cartQuantity,
-        incrementCartQuantity: incrementCartQuantity,
-        decrementCartQuantity
+        cart, 
+        addItem,
+        clear,
+        isInCart,
+        deleteItem, 
+        cartQuantity, 
+        total
     }} >
         {children}
     </CartContext.Provider>

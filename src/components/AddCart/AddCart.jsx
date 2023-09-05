@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/cartContext";
-
+/*
 function AddCart() {
     const cartContext = useContext(CartContext);
     const [addToCart, setAddToCart] = useState(false);
@@ -24,4 +24,4 @@ function AddCart() {
     )
 }
 
-export default AddCart;
+export default AddCart;*/

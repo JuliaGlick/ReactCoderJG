@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Cart from "../Cart/Cart";
 
 function Navigation() {
     return (
@@ -22,7 +23,7 @@ function Navigation() {
                 <NavLink to={`/category/utensillos`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}><Button variant="success">Utensillos de Cocina</Button></NavLink>
                 <NavLink to={`/category/sopas`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}><Button variant="success">Sopas Instantaneas</Button></NavLink>
             </Nav>
-            <CartWidget />
+            <NavLink to="/cart"><CartWidget /></NavLink>
          </Container>
       </Navbar>
     );
