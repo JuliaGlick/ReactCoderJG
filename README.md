@@ -1,6 +1,9 @@
-# React + Vite
+# Chihiro Ramen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Proyecto Final De Curso de React
+
+This is a React based Ecommerce and a Final Project of the React Course of Coderhouse.
+
 
 Currently, two official plugins are available:
 
