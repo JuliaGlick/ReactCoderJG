@@ -1,4 +1,4 @@
-const products = [
+/* const products = [
     {
         id:"1",
         name:"Nis Sin Ramen",
@@ -61,5 +61,5 @@ export const getProductsByCategory = (categoryId) => {
             }
         }, 2000)
     })
-}
-
+} 
+ */

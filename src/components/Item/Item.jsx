@@ -1,5 +1,4 @@
 import "./Item.css"
-import { getProducts } from "../asyncMock";
 import { Card } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import { Link } from "react-router-dom";
@@ -7,28 +6,7 @@ import { Button } from "bootstrap";
 
 const Item = ({id, name, image, price, stock}) => {
     return (
-      /* <article className="cardItem">
-            <header className="header">
-                <h2 className="itemHeader">
-                    {name}
-                </h2>
-            </header>
-            <picture>
-                <img src={image} alt={name} className="itemImg"/>
-            </picture>
-            <section>
-                <p className="info">
-                    Precio: ${price}
-                </p>
-                <p className="info">
-                    Stock Disponible: {stock}
-                </p>
-            </section>
-            <footer>
-                <Link to={`/item/${id}`} className= "button">Ver Detalle</Link>
-            </footer>
-        </article> */
-
+      
         <Card style={{width: "18rem"}} >
             <CardHeader>
                 <Card.Img variant="top" src={image} />
