@@ -8,6 +8,7 @@ const Checkout = () => {
     const[validateEmail, setValidateEmail] = useState("")
     const [orderId, setOrderId] = useState("")
     const {cart, total, clear} = useContext(CartContext)
+    
     const datosFactura = (ev) => {
         setUser({
             ...user,

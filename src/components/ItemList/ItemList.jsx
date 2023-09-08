@@ -4,9 +4,9 @@ const ItemList = ({products}) => {
     return(
         <div style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "grid",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
         }} >
             {products.map(prod => <Item key={prod.id} {...prod}/>)}
         </div>

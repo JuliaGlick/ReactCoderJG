@@ -6,7 +6,7 @@ import CartItem from "../CartItem/CartItem";
 
 const Cart = () =>{
     const {cart, clear, total} = useContext(CartContext)
-
+    console.log(cart)
 
     return (
         <div>
